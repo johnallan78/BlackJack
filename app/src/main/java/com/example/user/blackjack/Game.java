@@ -30,6 +30,14 @@ public class Game {
         System.out.println(punter.getValue());
         System.out.println("Dealer's visible card is: ");
         dealer.revealDealerHand();
+        punter.NextMove();
+        punter.populateHit(deck);
+        punter.revealplayerHand();
+        System.out.println(punter.getValue());
+            if (punter.getValue() > 21){
+                System.out.println("Sorry, you are bust. House wins");
+            }
+        punter.NextMove();
 
     }
 }
