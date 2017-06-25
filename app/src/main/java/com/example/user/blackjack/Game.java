@@ -50,6 +50,10 @@ public class Game {
                System.out.println("You decide to stick");
                System.out.println("Dealer's hand: ");
                System.out.println(dealer.getValue());
+               while(dealer.getValue() < 17){
+                   dealer.populateHand(deck);
+                   dealer.getValue();
+               }
                if (dealer.getValue() > 21) {
                    System.out.println("House is bust. Player wins.");
                } else if (punter.getValue() > 21) {
@@ -78,19 +82,20 @@ public class Game {
         while(true) {
             System.out.println("Do you choose to hit, or stick?");
             String secondInput = sc.nextLine().toUpperCase();
-            char secondChoice = input.charAt(0);
+            char secondChoice = secondInput.charAt(0);
             if (secondChoice == 'H') {
                 if (punter.getValue() < 21) {
-                    System.out.println("Do you choose to hit, or stick?");
                     punter.populateHit(deck);
                     punter.revealplayerHand();
+                    System.out.println("Player's hand is: ");
                     System.out.println(punter.getValue());
-                    break;
+
                 }
             }
             else if (secondChoice == 'S') {         // not flowing to this statement
                 System.out.println("You decide to stick");
                 break;
+
              }
              break;
         }
@@ -100,6 +105,10 @@ public class Game {
 
         System.out.println("Dealer's hand: ");
         System.out.println(dealer.getValue());
+        while(dealer.getValue() < 17){
+            dealer.populateHand(deck);
+            dealer.getValue();
+        }
         if (dealer.getValue() > 21) {
             System.out.println("House is bust. Player wins.");
         }
