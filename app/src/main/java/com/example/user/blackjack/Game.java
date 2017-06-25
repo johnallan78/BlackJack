@@ -48,9 +48,7 @@ public class Game {
                 if (punter.getValue() > 21) {
                     System.out.println("Sorry, you are bust. House wins.");
                     break;
-                }
-
-                else if (punter.getValue() == 21){
+                } else if (punter.getValue() == 21) {
                     System.out.println("Blackjack!");
                     break;
                 }
@@ -61,22 +59,32 @@ public class Game {
                 if (choice == 'S') {
                     System.out.println("You decide to stick");
                     break;
-                }
-                else
+                } else
                     while ((punter.getValue() < 21)) {
-                        //punter.NextMove();
-                        punter.populateHit(deck);
-                        punter.revealplayerHand();
-                        System.out.println(punter.getValue());
-
-                    }
+                    //punter.NextMove();
+                    punter.populateHit(deck);
+                    punter.revealplayerHand();
+                    System.out.println(punter.getValue());
 
 
 
 
             }
+
+
+
+
+            break;
+
+            }
             dealer.revealDealerHandFinal();
             System.out.println(dealer.getValue());
+            while (dealer.getValue() < 17){
+                dealer.populateHit(deck);
+                dealer.revealDealerHandFinal();
+            }
+
+        System.out.println(dealer.getValue());
         }
 
 
