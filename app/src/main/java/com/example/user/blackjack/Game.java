@@ -20,7 +20,10 @@ public class Game {
         this.card = new ArrayList<Card>();
     }
 
-    public void playGame(){
+
+
+
+    public void playGame() {
         deck.populateDeck();
         deck.shuffleDeck();
         punter.populateHand(deck);
@@ -28,16 +31,44 @@ public class Game {
         punter.revealplayerHand();
         System.out.print("Player's hand is: ");
         System.out.println(punter.getValue());
-        System.out.println("Dealer's visible card is: ");
-        dealer.revealDealerHand();
-        punter.NextMove();
-        punter.populateHit(deck);
-        punter.revealplayerHand();
-        System.out.println(punter.getValue());
-            if (punter.getValue() > 21){
-                System.out.println("Sorry, you are bust. House wins");
-            }
-        punter.NextMove();
+            if (punter.getValue() == 21){
+            System.out.println("Blackjack!");
+        }
 
-    }
+            System.out.println("Dealer's visible card is: ");
+            dealer.revealDealerHand();
+            punter.NextMove();
+            punter.populateHit(deck);
+            punter.revealplayerHand();
+            System.out.println(punter.getValue());
+            while (true) {
+                if (punter.getValue() > 21) {
+                    System.out.println("Sorry, you are bust. House wins.");
+                    break;
+                }
+
+                else if (punter.getValue() == 21){
+                    System.out.println("Blackjack!");
+                    break;
+                }
+                else {
+                    while ((punter.getValue() < 21)) {
+                        punter.NextMove();
+                        punter.populateHit(deck);
+                        punter.revealplayerHand();
+                        System.out.println(punter.getValue());
+                    }
+
+                }
+
+
+            }
+            dealer.revealDealerHandFinal();
+            System.out.println(dealer.getValue());
+        }
+
+
+
+
+
 }

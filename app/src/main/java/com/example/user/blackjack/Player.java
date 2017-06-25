@@ -16,7 +16,6 @@ public abstract class Player {
     private Scanner sc;
     Dealer dealer;
     Deck deck;
-    Punter punter;
 
     public Player() {
         cards = new ArrayList<Card>();
@@ -38,9 +37,7 @@ public abstract class Player {
         }
     }
 
-    public void revealDealerHand(){
-        System.out.println(cards.get(0).getCard());
-    }
+
 
     public void populateHit(Deck deck){
 
@@ -57,11 +54,26 @@ public abstract class Player {
         return count;
     }
 
+    public void revealDealerHand(){
+        System.out.println(cards.get(0).getCard());
+    }
 
-
-
-
+    public void revealDealerHandFinal(){
+        System.out.println("Dealer Hand: ");
+        for(Card card : cards){
+            System.out.println(card.getCard());
         }
+    }
+
+
+
+
+
+
+
+
+
+}
 
 
 

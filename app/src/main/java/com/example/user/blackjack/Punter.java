@@ -11,8 +11,7 @@ public class Punter extends Player {
 
     ArrayList<Card> cards;
     Deck deck;
-    Punter punter;
-    Player player;
+    Game game;
 
 
 
@@ -21,7 +20,7 @@ public class Punter extends Player {
     public Punter(){
         sc = new Scanner(System.in);
         deck = new Deck();
-        player = new Player();
+
 
 
     }
@@ -30,10 +29,13 @@ public class Punter extends Player {
         System.out.println("Do you choose to hit, or stick?");
         String input = sc.nextLine().toUpperCase();
         char choice = input.charAt(0);
-        while (choice == 'H'){
+        if (choice != 'H'){
             System.out.println("The dealer will give you another card.");
-            player.populateHit(deck);
+
         }
+
+
+
 
     }
 
