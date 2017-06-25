@@ -33,6 +33,8 @@ public class Punter extends Player {
             System.out.println("You decide to stick");
 
         }
-        revealDealerHandFinal();
+
+
+
     }
 }

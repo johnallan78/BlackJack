@@ -16,6 +16,7 @@ public abstract class Player {
     private Scanner sc;
     Dealer dealer;
     Deck deck;
+    Punter punter;
 
     public Player() {
         cards = new ArrayList<Card>();
@@ -65,7 +66,31 @@ public abstract class Player {
         }
     }
 
+//    public void finalScores(){
+//        revealDealerHandFinal();
+//        System.out.println(dealer.getValue());
+//        while (dealer.getValue() < 17){
+//            revealDealerHandFinal();
+//        }
+//    }
 
+    public void stick(){
+        System.out.println("You decide to stick");
+        System.out.println("Dealer's hand: ");
+        System.out.println(dealer.getValue());
+        if (dealer.getValue() > 21) {
+            System.out.println("House is bust. Player wins.");
+        } else if (punter.getValue() > 21) {
+            System.out.println("Player Bust! House Wins.");
+        } else if (dealer.getValue() < punter.getValue()) {
+            System.out.println("Player Wins!");
+        } else if (dealer.getValue() > punter.getValue()) {
+            System.out.println("House Wins");
+        } else if (dealer.getValue() == punter.getValue()) {
+            System.out.println("Draw. Player wins!");
+        }
+
+    }
 
 
 
