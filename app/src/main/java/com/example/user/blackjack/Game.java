@@ -1,6 +1,7 @@
 package com.example.user.blackjack;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Created by user on 23/06/2017.
@@ -11,6 +12,7 @@ public class Game {
     private Dealer dealer;
     private ArrayList<Card> card;
     private Deck deck;
+    private Scanner sc;
 
 
     public Game() {
@@ -18,6 +20,7 @@ public class Game {
         this.dealer = new Dealer();
         this.deck = new Deck();
         this.card = new ArrayList<Card>();
+        sc = new Scanner(System.in);
     }
 
 
@@ -51,15 +54,24 @@ public class Game {
                     System.out.println("Blackjack!");
                     break;
                 }
-                else {
+                System.out.println("Do you choose to hit, or stick?");
+                String input = sc.nextLine().toUpperCase();
+                char choice = input.charAt(0);
+
+                if (choice == 'S') {
+                    System.out.println("You decide to stick");
+                    break;
+                }
+                else
                     while ((punter.getValue() < 21)) {
-                        punter.NextMove();
+                        //punter.NextMove();
                         punter.populateHit(deck);
                         punter.revealplayerHand();
                         System.out.println(punter.getValue());
+
                     }
 
-                }
+
 
 
             }

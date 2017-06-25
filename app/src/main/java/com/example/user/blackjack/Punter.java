@@ -29,19 +29,10 @@ public class Punter extends Player {
         System.out.println("Do you choose to hit, or stick?");
         String input = sc.nextLine().toUpperCase();
         char choice = input.charAt(0);
-        if (choice != 'H'){
-            System.out.println("The dealer will give you another card.");
+        if (choice != 'H') {
+            System.out.println("You decide to stick");
 
         }
-
-
-
-
+        revealDealerHandFinal();
     }
-
-
-
-
-
-
 }
