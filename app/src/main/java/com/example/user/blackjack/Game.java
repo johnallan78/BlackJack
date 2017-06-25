@@ -45,8 +45,10 @@ public class Game {
            if (firstChoice == 'H') {
                punter.populateHit(deck);
                punter.revealplayerHand();
+               punter.getValue();
            }
            else if (firstChoice == 'S') {
+               punter.getValue();
                System.out.println("You decide to stick");
                System.out.println("Dealer's hand: ");
                System.out.println(dealer.getValue());
@@ -89,7 +91,7 @@ public class Game {
                     punter.revealplayerHand();
                     System.out.println("Player's hand is: ");
                     System.out.println(punter.getValue());
-
+                    break;
                 }
             }
             else if (secondChoice == 'S') {         // not flowing to this statement
