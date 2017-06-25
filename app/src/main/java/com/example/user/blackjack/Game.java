@@ -78,22 +78,30 @@ public class Game {
                return;
            }
            System.out.println(punter.getValue());
-           System.out.println("Do you choose to hit, or stick?");
+        while(true) {
+            System.out.println("Do you choose to hit, or stick?");
+            String secondInput = sc.nextLine().toUpperCase();
+            char secondChoice = input.charAt(0);
 
 
-//            if (firstChoice == 'H') {
-//                while ((punter.getValue() < 21)) {
-//                    punter.populateHit(deck);
-//                    punter.revealplayerHand();
-//                    System.out.println(punter.getValue());
-//                }
-//            }
-//
-//            else if (firstChoice == 'S') {
-//                    System.out.println("You decide to stick");
-//
-//
-//                }
+            if (secondChoice == 'H') {
+                if (punter.getValue() < 21) {
+                    System.out.println("Do you choose to hit, or stick?");
+                    punter.populateHit(deck);
+                    punter.revealplayerHand();
+                    System.out.println(punter.getValue());
+                    break;
+
+                }
+
+            }
+            else if (secondChoice == 'S') {         // not flowing to this statement
+                System.out.println("You decide to stick");
+                break;
+             }
+             break;
+        }
+
 
 
 
