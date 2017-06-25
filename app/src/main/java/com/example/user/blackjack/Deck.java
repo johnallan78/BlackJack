@@ -16,10 +16,6 @@ public class Deck {
         this.cards = new ArrayList<Card>();
     }
 
-//    public Card addCard(){
-//       this.deck.add(card);
-//    }
-
     public void populateDeck(){
         for (CardNum cardNum : CardNum.values()){
             for (Suit suit : Suit.values()){

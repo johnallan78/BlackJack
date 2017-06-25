@@ -23,9 +23,6 @@ public class Game {
         sc = new Scanner(System.in);
     }
 
-
-
-
     public void playGame() {
         deck.populateDeck();
         deck.shuffleDeck();
@@ -41,7 +38,6 @@ public class Game {
 
             System.out.println("Dealer's visible card is: ");
             dealer.revealDealerHand();
-//            punter.NextMove();
         System.out.println("Do you choose to hit, or stick?");
         String input = sc.nextLine().toUpperCase();
         char firstChoice = input.charAt(0);
@@ -78,12 +74,11 @@ public class Game {
                return;
            }
            System.out.println(punter.getValue());
+
         while(true) {
             System.out.println("Do you choose to hit, or stick?");
             String secondInput = sc.nextLine().toUpperCase();
             char secondChoice = input.charAt(0);
-
-
             if (secondChoice == 'H') {
                 if (punter.getValue() < 21) {
                     System.out.println("Do you choose to hit, or stick?");
@@ -91,9 +86,7 @@ public class Game {
                     punter.revealplayerHand();
                     System.out.println(punter.getValue());
                     break;
-
                 }
-
             }
             else if (secondChoice == 'S') {         // not flowing to this statement
                 System.out.println("You decide to stick");
@@ -124,9 +117,5 @@ public class Game {
         }
 
     }
-
-
-
-
 
 }

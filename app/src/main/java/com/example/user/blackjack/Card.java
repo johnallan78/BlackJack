@@ -17,10 +17,6 @@ public class Card {
         return this.cardNum.getNumVal();
     }
 
-    public Suit getSuit() {
-        return this.suit;
-    }
-
     public String getCard(){
         return this.cardNum + " of " + this.suit;
     }

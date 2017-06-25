@@ -29,6 +29,4 @@ public enum CardNum {
     public int getNumVal(){
         return this.numVal;
     }
-
-
 }
