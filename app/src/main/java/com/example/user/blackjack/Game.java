@@ -55,6 +55,7 @@ public class Game {
                while(dealer.getValue() < 17){
                    dealer.populateHand(deck);
                    dealer.getValue();
+                   System.out.println(dealer.getValue());
                }
                if (dealer.getValue() > 21) {
                    System.out.println("House is bust. Player wins.");
@@ -94,7 +95,7 @@ public class Game {
                     break;
                 }
             }
-            else if (secondChoice == 'S') {         // not flowing to this statement
+            else if (secondChoice == 'S') {
                 System.out.println("You decide to stick");
                 break;
 
@@ -108,8 +109,9 @@ public class Game {
         System.out.println("Dealer's hand: ");
         System.out.println(dealer.getValue());
         while(dealer.getValue() < 17){
-            dealer.populateHand(deck);
+            dealer.populateHit(deck);
             dealer.getValue();
+            System.out.println(dealer.getValue());
         }
         if (dealer.getValue() > 21) {
             System.out.println("House is bust. Player wins.");
